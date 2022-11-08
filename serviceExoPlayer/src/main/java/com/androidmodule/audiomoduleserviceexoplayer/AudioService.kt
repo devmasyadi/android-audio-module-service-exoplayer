@@ -65,7 +65,7 @@ class AudioService : Service() {
         return START_STICKY
     }
 
-    internal inner class BinderAudioService : Binder() {
+    inner class BinderAudioService : Binder() {
         val getService: AudioService = this@AudioService
     }
 
