@@ -1,0 +1,4 @@
+<resources>
+    <string name="channel_name">Channel Name</string>
+    <string name="channel_desc">Channel Desc</string>
+</resources>
