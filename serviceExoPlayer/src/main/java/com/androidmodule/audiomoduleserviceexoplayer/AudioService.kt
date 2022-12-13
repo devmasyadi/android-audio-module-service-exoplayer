@@ -11,6 +11,7 @@ import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.drawable.Drawable
 import android.os.Binder
+import android.os.Build
 import android.os.IBinder
 import androidx.core.app.NotificationCompat
 import com.androidmodule.audiomodule.model.AudiosItem
@@ -109,13 +110,20 @@ class AudioService : Service() {
                 @SuppressLint("UnspecifiedImmutableFlag")
                 override fun createCurrentContentIntent(player: Player): PendingIntent? {
                     val intent = Intent(this@AudioService, AudioUtils.detailAudioActivity)
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
-                    return getActivity(
-                        this@AudioService,
-                        0,
-                        intent,
-                        FLAG_ONE_SHOT
-                    )
+//                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+//                    return getActivity(
+//                        this@AudioService,
+//                        0,
+//                        intent,
+//                        FLAG_ONE_SHOT
+//                    )
+                    var pendingIntent: PendingIntent? = null
+                    pendingIntent = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+                        getActivity(this@AudioService, 0, intent, PendingIntent.FLAG_MUTABLE)
+                    } else {
+                        getActivity(this@AudioService, 0, intent, FLAG_ONE_SHOT)
+                    }
+                    return  pendingIntent
                 }
 
                 override fun getCurrentContentText(player: Player): CharSequence? {
