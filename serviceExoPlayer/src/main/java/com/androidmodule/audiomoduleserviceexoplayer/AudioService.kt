@@ -14,11 +14,11 @@ import android.os.Binder
 import android.os.Build
 import android.os.IBinder
 import androidx.core.app.NotificationCompat
-import com.androidmodule.audiomodule.model.AudiosItem
-import com.androidmodule.audiomodule.utils.isPathExistDownload
-import com.androidmodule.audiomodule.utils.toPathDownload
-import com.androidmodule.audiomodule.utils.validateDownload
-import com.androidmodule.audiomodule.viewmodel.AudioViewModel
+import com.google.android.material.audio.model.AudiosItem
+import com.google.android.material.audio.utils.isPathExistDownload
+import com.google.android.material.audio.utils.toPathDownload
+import com.google.android.material.audio.utils.validateDownload
+import com.google.android.material.audio.viewmodel.AudioViewModel
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.target.CustomTarget
 import com.bumptech.glide.request.transition.Transition

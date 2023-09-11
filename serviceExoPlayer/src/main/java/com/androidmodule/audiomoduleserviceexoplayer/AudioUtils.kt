@@ -2,7 +2,7 @@ package com.androidmodule.audiomoduleserviceexoplayer
 
 import android.app.Activity
 import android.content.Intent
-import com.androidmodule.audiomodule.model.AudiosItem
+import com.google.android.material.audio.model.AudiosItem
 
 object AudioUtils {
 
